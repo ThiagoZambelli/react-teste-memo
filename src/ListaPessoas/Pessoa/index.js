@@ -1,11 +1,17 @@
 import { memo } from "react"
 
-function Pessoa({nome}){
+function Pessoa({nome, deletar, id}){
     console.log(`Teste: ${nome} renderizado`)
 
     return(
-        <li>
+        <li className="box mb-3">
             {nome}
+            <button 
+                onClick={() => deletar(id)}
+                className="button is-danger is-outlined ml-2"
+            >
+                Deletar
+            </button>
         </li>
     )
 }
